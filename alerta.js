@@ -1,1 +1,1 @@
-alert("NamuKimeraVT © 2025 | Todos los derechos reservados");
+alert("NamuVT Studios © 2025 | Todos los derechos reservados");
