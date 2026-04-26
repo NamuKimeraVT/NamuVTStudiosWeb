@@ -1,1 +1,0 @@
-alert("NamuVT Studios © 2025 | Todos los derechos reservados");
