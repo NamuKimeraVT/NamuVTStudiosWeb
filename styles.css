@@ -1,4 +1,84 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -7,7 +87,17 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
     display: block;
 }
 
@@ -50,7 +140,9 @@ body.is-loading #main {
     transform: perspective(1000px) rotateY(16.875deg);
 }
 
-body.is-instant #main, body.is-instant #main>.inner>*, body.is-instant #main>.inner>section>* {
+body.is-instant #main,
+body.is-instant #main>.inner>*,
+body.is-instant #main>.inner>section>* {
     transition: none !important;
 }
 
@@ -59,15 +151,15 @@ body.is-instant:after {
     transition: none !important;
 }
 
-ol, ul {
-    list-style: none;
-}
-
-blockquote, q {
+blockquote,
+q {
     quotes: none;
 }
 
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
     content: '';
     content: none;
 }
@@ -87,14 +179,19 @@ input::-moz-focus-inner {
     padding: 0
 }
 
-input[type="text"], input[type="email"], select, textarea {
+input[type="text"],
+input[type="email"],
+select,
+textarea {
     -moz-appearance: none;
     -webkit-appearance: none;
     -ms-appearance: none;
     appearance: none
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: border-box;
 }
 
@@ -172,17 +269,46 @@ a {
     transition: color 0.25s ease;
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
     direction: var(--site-language-direction);
     position: relative;
 }
 
-h1 span.p, h2 span.p, h3 span.p, p span.p {
+h1 span.p,
+h2 span.p,
+h3 span.p,
+p span.p {
     display: block;
     position: relative;
 }
 
-h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 strong, h3 strong, p strong, h1 a, h2 a, h3 a, p a, h1 code, h2 code, h3 code, p code, h1 mark, h2 mark, h3 mark, p mark, h1 spoiler-text, h2 spoiler-text, h3 spoiler-text, p spoiler-text {
+h1 span[style],
+h2 span[style],
+h3 span[style],
+p span[style],
+h1 strong,
+h2 strong,
+h3 strong,
+p strong,
+h1 a,
+h2 a,
+h3 a,
+p a,
+h1 code,
+h2 code,
+h3 code,
+p code,
+h1 mark,
+h2 mark,
+h3 mark,
+p mark,
+h1 spoiler-text,
+h2 spoiler-text,
+h3 spoiler-text,
+p spoiler-text {
     -webkit-text-fill-color: currentcolor;
 }
 
@@ -426,10 +552,6 @@ h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 str
     border-bottom-right-radius: inherit;
 }
 
-#image01 {
-    text-align: center;
-}
-
 #image01:not(:first-child) {
     margin-top: 1.5rem !important;
 }
@@ -493,11 +615,11 @@ h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 str
 }
 
 .text:not(:first-child) {
-    margin-top: 1rem !important;
+    margin-top: 1rem;
 }
 
 .text:not(:last-child) {
-    margin-bottom: 1rem !important;
+    margin-bottom: 1rem;
 }
 
 .text li a:hover {
@@ -508,105 +630,132 @@ h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 str
     margin-top: 1rem;
 }
 
-#text01 {
-    font-size: 1.25em;
-    line-height: 1;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #4c00ff;
-}
-
-#text02 {
-    font-size: 2em;
-    line-height: 1;
-    font-weight: 600;
-    text-align: center;
-    text-transform: uppercase;
-    color: #000000;
-    width: calc(100% + 0.025rem);
-}
-
-#text03 {
-    font-size: 1.25em;
-    line-height: 1;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #ff0000;
-}
-
-#text04 {
-    font-size: 0.875em;
-    line-height: 1;
-    font-weight: 400;
-    text-transform: lowercase;
-    color: #00ccff;
-}
-
-#text05 {
-    font-size: 1.25em;
-    line-height: 1;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #6b6767;
-    width: calc(100% + 0.025rem);
-}
-
-#text06 {
-    font-size: 1em;
-    line-height: 1.875;
-    font-weight: 400;
-    color: #000000;
-    letter-spacing: 0.02rem;
-    width: calc(100% + 0.025rem);
-}
-
-#text07 {
-    font-size: 1em;
-    line-height: 1.875;
-    font-weight: 200;
-    color: #474747;
-    letter-spacing: 0.025rem;
-    width: calc(100% + 0.025rem);
-}
-
-#text08 {
-    font-size: 2em;
-    line-height: 1;
+#textmaintitle {
+    font-size: 3em;
     font-weight: 900;
     text-align: center;
     text-transform: uppercase;
     color: #ff00ff;
 }
 
-#text09 {
-    font-size: 0.875em;
-    line-height: 1;
-    font-weight: 400;
-    text-transform: lowercase;
-    color: #0011ff;
-}
-
-#text10 {
-    font-size: 2em;
-    line-height: 1.3;
-    font-weight: 500;
+#textmaintitle2 {
+    font-size: 2.2em;
+    font-weight: 700;
+    text-align: center;
     text-transform: uppercase;
-    color: #474747;
-    letter-spacing: 0.1rem;
-    width: calc(100% + 0.1rem);
+    color: #4c00ff;
 }
 
-#textprice {
-    font-size: 1em;
-    line-height: 1;
-    font-weight: bold;
+#texttitle {
+    font-size: 2em;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+#texttitle2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+#texttitle3 {
+    font-size: 1.25em;
+    font-weight: 400;
+    text-align: center;
     text-transform: uppercase;
     color: #ff0000;
 }
 
-#textfooter {
-    font-size: 1em;
+#texttitlecom {
+    font-size: 2.5em;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+#texttitlecom2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: justify;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+#texttitlecom3 {
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+#texttitlecom4 {
+    font-size: 1.5em;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: #4c00ff;
+}
+
+#texttitletos1 {
+    font-size: 2em;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+#texttitletos2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+#texttitletos3 {
+    font-size: 1.25em;
     font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+#texttos {
+    font-size: 1em;
+    font-weight: 200;
+    text-align: justify;
+    color: #000000;
+}
+
+#textnav {
+    font-size: 1.25em;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    color: #6b6767;
+}
+
+#textp {
+    font-size: 1em;
+    font-weight: 500;
+    text-align: justify;
+    color: #000000;
+}
+
+#textprice {
+    font-size: 1em;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+#textfooter {
+    font-size: 1.75em;
+    font-weight: 700;
     text-align: center;
     text-transform: uppercase;
     color: #000000;
@@ -615,10 +764,10 @@ h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 str
 .buttons {
     cursor: default;
     display: flex;
+    list-style: none;
     justify-content: var(--flex-alignment);
     letter-spacing: 0;
     padding: 0;
-    font-size: 1.125em;
     font-weight: 400;
     font-family: 'Sora', sans-serif;
 }
@@ -985,75 +1134,16 @@ h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 str
 }
 
 .image-column {
-  width: 20%;
+    width: 20%;
 }
 
 .content-column {
-  width: 80%;
+    width: 80%;
 }
 
 .container {
     position: relative;
     display: flex;
-}
-
-@media (max-width: 1920px) {}
-
-@media (max-width: 1680px) {
-    html {
-        font-size: 11pt;
-    }
-}
-
-.gallery {
-    display: flex;
-    border: 1px solid #ccc;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.gallery img {
-    width: auto;
-    height: auto;
-    margin: 10px;
-    border: 1px solid #ccc;
-    padding: 5px;
-    box-sizing: border-box;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.close:hover, .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
 }
 
 .interior-section01 {
@@ -1085,7 +1175,7 @@ h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 str
 }
 
 .section {
-    width: 45%;
+    width: 100%;
     padding: 10px;
 }
 
@@ -1162,7 +1252,13 @@ form .field button>svg {
     min-width: 100%;
 }
 
-form input[type="text"], form input[type="email"], form input[type="tel"], form input[type="number"], form textarea, form select, form .file {
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="number"],
+form textarea,
+form select,
+form .file {
     background-color: transparent;
     border: 0;
     direction: var(--site-language-direction);
@@ -1230,7 +1326,8 @@ form input[type="number"] {
     -moz-appearance: textfield;
 }
 
-form input[type="number"]::-webkit-inner-spin-button, form input[type="number"]::-webkit-outer-spin-button {
+form input[type="number"]::-webkit-inner-spin-button,
+form input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
 
@@ -1313,16 +1410,6 @@ form .actions button:disabled {
     pointer-events: none;
 }
 
-@keyframes button-spinner {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 #form02 .inner>* {
     margin: 1rem 0 0 0;
     max-width: 100%;
@@ -1369,7 +1456,14 @@ form .actions button:disabled {
     fill: #309EDB;
 }
 
-#form02 input[type="text"], #form02 input[type="email"], #form02 input[type="tel"], #form02 input[type="number"], #form02 textarea, #form02 select, #form02 input[type="checkbox"]+label, #form02 .file {
+#form02 input[type="text"],
+#form02 input[type="email"],
+#form02 input[type="tel"],
+#form02 input[type="number"],
+#form02 textarea,
+#form02 select,
+#form02 input[type="checkbox"]+label,
+#form02 .file {
     text-transform: uppercase;
     font-size: 1em;
     font-family: 'Source Sans Pro', sans-serif;
@@ -1378,7 +1472,13 @@ form .actions button:disabled {
     border-radius: 1.625rem;
 }
 
-#form02 input[type="text"], #form02 input[type="email"], #form02 input[type="tel"], #form02 input[type="number"], #form02 textarea, #form02 select, #form02 .file {
+#form02 input[type="text"],
+#form02 input[type="email"],
+#form02 input[type="tel"],
+#form02 input[type="number"],
+#form02 textarea,
+#form02 select,
+#form02 .file {
     padding-left: calc(0.025rem + 0.7875rem);
     color: #474747;
     border: solid 1px #CCCCCC;
@@ -1388,7 +1488,12 @@ form .actions button:disabled {
     color: #474747;
 }
 
-#form02 input[type="text"], #form02 input[type="email"], #form02 input[type="tel"], #form02 input[type="number"], #form02 select, #form02 .file {
+#form02 input[type="text"],
+#form02 input[type="email"],
+#form02 input[type="tel"],
+#form02 input[type="number"],
+#form02 select,
+#form02 .file {
     height: 2.25rem;
     padding: 0 0.7875rem;
     line-height: calc(2.25rem - 2px);
@@ -1536,4 +1641,82 @@ form .actions button:disabled {
 #form02 .file[data-filename=""]:before {
     color: #474747;
     opacity: 0.55;
+}
+
+/* Contenedor general del carrusel */
+.carousel-container {
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Carrusel */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    user-select: none;
+    text-align: center;
+}
+
+.carousel-item img,
+.carousel-item video,
+.carousel-item audio {
+    max-width: 100%;
+    border-radius: 8px;
+    outline: none;
+}
+
+/* Botones de navegación */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+    transition: background 0.3s;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+/* Controles de audio personalizados */
+audio {
+    width: 90%;
+    margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel-container {
+        max-width: 95%;
+    }
 }
