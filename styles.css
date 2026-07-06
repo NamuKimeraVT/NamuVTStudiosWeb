@@ -265,7 +265,6 @@ spoiler-text.active {
     width: calc(100% + calc(var(--padding-horizontal) * 2) + 0.4725px);
 }
 
-
 #main .container.full:first-child>.wrapper {
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
