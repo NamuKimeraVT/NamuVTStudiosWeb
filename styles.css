@@ -207,7 +207,6 @@ spoiler-text.active {
     --flex-alignment: flex-start;
     --indent-left: 1;
     --indent-right: 0;
-    --width: 40rem;
     align-items: center;
     display: flex;
     flex-grow: 0;
@@ -232,6 +231,7 @@ spoiler-text.active {
     --padding-horizontal: 3rem;
     --padding-vertical: 0rem;
     --spacing: 0rem;
+    --width: 35rem;
     border-radius: var(--border-radius-tl) var(--border-radius-tr) var(--border-radius-br) var(--border-radius-bl);
     max-width: 100%;
     position: relative;
@@ -642,32 +642,6 @@ spoiler-text.active {
     background-color: #0c21df;
 }
 
-#buttons06 .button {
-    background-color: #e91296;
-    color: #FFFFFF;
-    background-image: linear-gradient(45deg, rgba(234, 41, 41, 0.719) 0%, rgba(184, 22, 103, 0.836) 75%);
-    background-position: 0% 0%;
-    background-repeat: repeat;
-    background-size: cover;
-}
-
-#buttons06 .button:hover {
-    background-color: #81055e;
-}
-
-#buttons07 .button {
-    background-color: #00ffff;
-    color: #FFFFFF;
-    background-image: linear-gradient(45deg, rgba(0, 255, 157, 0.719) 0%, rgba(30, 10, 212, 0.836) 75%);
-    background-position: 0% 0%;
-    background-repeat: repeat;
-    background-size: cover;
-}
-
-#buttons07 .button:hover {
-    background-color: #00ff95;
-}
-
 .image-column {
     width: 20%;
 }
@@ -843,24 +817,4 @@ spoiler-text.active {
     margin-left: calc(var(--padding-horizontal) * -1);
     max-width: calc(100% + calc(var(--padding-horizontal) * 2) + 0.4725px);
     width: calc(100% + calc(var(--padding-horizontal) * 2) + 0.4725px);
-}
-
-#main-form .container.full:first-child>.wrapper {
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
-}
-
-#main-form .container.full:last-child>.wrapper {
-    border-bottom-left-radius: inherit;
-    border-bottom-right-radius: inherit;
-}
-
-#main-form .container.full:first-child>.wrapper>.inner-form {
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
-}
-
-#main-form .container.full:last-child>.wrapper>.inner-form {
-    border-bottom-left-radius: inherit;
-    border-bottom-right-radius: inherit;
 }
