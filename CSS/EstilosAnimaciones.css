@@ -1,0 +1,118 @@
+/* Base state: all animated photos start hidden/offset */
+.ap-base {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: var(--ap-duration, 800ms);
+    transition-delay: var(--anim-delay, 0ms);
+    transition-timing-function: ease-out;
+    will-change: opacity, transform;
+}
+
+.ap-base.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Animation variants (photos) */
+.ap-fade {
+    opacity: 100%;
+}
+
+.ap-fade-up {
+    transform: translateY(40px);
+}
+
+.ap-fade-down {
+    transform: translateY(-40px);
+}
+
+.ap-zoom {
+    transform: scale(0.85);
+}
+
+.ap-slide-left {
+    transform: translateX(60px);
+}
+
+.ap-slide-right {
+    transform: translateX(-60px);
+}
+
+/* ---- Simple animation (whole text element) ---- */
+.at-base {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: var(--at-duration, 800ms);
+    transition-delay: var(--anim-delay, 0ms);
+    transition-timing-function: ease-out;
+    will-change: opacity, transform;
+}
+
+.at-base.visible {
+    opacity: 1;
+    transform: none;
+}
+
+.at-fade-up {
+    transform: translateY(30px);
+}
+
+.at-fade-down {
+    transform: translateY(-30px);
+}
+
+.at-slide-left {
+    transform: translateX(50px);
+}
+
+.at-slide-right {
+    transform: translateX(-50px);
+}
+
+/* ---- Segmented (letters / words) ---- */
+.at-segmented {
+    display: inline-block;
+}
+
+.at-segment {
+    display: inline-block;
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: var(--at-duration, 500ms);
+    transition-delay: calc(var(--anim-delay, 0ms) + var(--at-segment-delay, 0ms));
+    transition-timing-function: ease-out;
+}
+
+.at-segment.visible {
+    opacity: 1;
+    transform: none;
+}
+
+.at-segment.at-fade-up {
+    transform: translateY(20px);
+}
+
+.at-segment.at-fade-down {
+    transform: translateY(-20px);
+}
+
+.at-segment.at-slide-left {
+    transform: translateX(20px);
+}
+
+.at-segment.at-slide-right {
+    transform: translateX(-20px);
+}
+
+/* ---- Typewriter ---- */
+.at-typewriter {
+    display: inline-block;
+    white-space: pre-wrap;
+    border-right: 2px solid currentColor;
+    animation: at-blink 0.8s step-end infinite;
+}
+
+@keyframes at-blink {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: currentColor; }
+}
