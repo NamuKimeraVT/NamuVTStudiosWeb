@@ -405,7 +405,7 @@ spoiler-text.active {
 
 .text p {
     align-items: center;
-    justify-content: center;
+    justify-content: justify;
     max-width: 100%;
     text-decoration: none;
     vertical-align: middle;
@@ -414,7 +414,7 @@ spoiler-text.active {
 
 .text li a {
     align-items: center;
-    justify-content: center;
+    justify-content: justify;
     max-width: 100%;
     text-decoration: none;
     vertical-align: middle;
@@ -452,7 +452,7 @@ spoiler-text.active {
 }
 
 #texttitlemain1 {
-    font-size: 3rem;
+    font-size: 60px;
     font-weight: 900;
     text-align: center;
     text-transform: uppercase;
@@ -460,7 +460,7 @@ spoiler-text.active {
 }
 
 #texttitlemain2 {
-    font-size: 2.5rem;
+    font-size: 50px;
     font-weight: 900;
     text-align: center;
     text-transform: uppercase;
@@ -468,7 +468,7 @@ spoiler-text.active {
 }
 
 #texttitlemain3 {
-    font-size: 2rem;
+    font-size: 40px;
     font-weight: 900;
     text-align: center;
     text-transform: uppercase;
@@ -476,7 +476,7 @@ spoiler-text.active {
 }
 
 #texttitlesec1 {
-    font-size: 1.75rem;
+    font-size: 36px;
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
@@ -484,7 +484,7 @@ spoiler-text.active {
 }
 
 #texttitlesec2 {
-    font-size: 1.5rem;
+    font-size: 32px;
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
@@ -492,7 +492,7 @@ spoiler-text.active {
 }
 
 #texttitlesec3 {
-    font-size: 1.25rem;
+    font-size: 28px;
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
@@ -500,7 +500,7 @@ spoiler-text.active {
 }
 
 #textnav {
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: 900;
     text-align: justify;
     text-transform: uppercase;
@@ -508,14 +508,14 @@ spoiler-text.active {
 }
 
 #textp {
-    font-size: 1.25rem;
+    font-size: 24px;
     font-weight: 500;
     text-align: justify;
     color: #000000;
 }
 
 #textfooter {
-    font-size: 2rem;
+    font-size: 48px;
     font-weight: 900;
     text-align: center;
     color: #000000;
