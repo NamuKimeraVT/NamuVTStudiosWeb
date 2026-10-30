@@ -1,5 +1,4 @@
 {
-    "$schema": "https://openapi.vercel.sh/vercel.json",
     "functions": {
         "api/contact.js": {
             "maxDuration": 30

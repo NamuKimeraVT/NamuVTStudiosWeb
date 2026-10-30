@@ -2,7 +2,7 @@
 
 /*
  * site.js centraliza el comportamiento compartido del sitio:
- * - inicializa el menú cargado por Footer&NavLoader.js;
+ * - inicializa el menú cargado por load-shared-fragments.js;
  * - marca el enlace de la página actual y actualiza el año del footer;
  * - activa animaciones de entrada al desplazarse por la página;
  * - envía el formulario de Contacto.html al backend /api/contact.
