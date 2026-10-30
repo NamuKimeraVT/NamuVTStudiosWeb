@@ -52,8 +52,10 @@ async function handleContactRequest(request) {
     const mailCredentials = getMailCredentials();
 
     if (!mailCredentials) {
+        const missingVariables = getMissingMailVariables();
+        console.error("Configuración de correo incompleta. Variables ausentes:", missingVariables.join(", "));
         return jsonResponse({
-            message: "El servicio de correo todavía no está configurado en el servidor."
+            message: "El servicio de correo no está configurado. Revisá GMAIL_USER y GMAIL_APP_PASSWORD en las variables de entorno de Vercel y volvé a desplegar."
         }, 503);
     }
 
@@ -240,6 +242,21 @@ function pruneRateLimitEntries(now) {
             recentSubmissions.delete(ipAddress);
         }
     }
+}
+
+
+function getMissingMailVariables() {
+    const missing = [];
+
+    if (!process.env.GMAIL_USER?.trim()) {
+        missing.push("GMAIL_USER");
+    }
+
+    if (!process.env.GMAIL_APP_PASSWORD?.replace(/\s/g, "")) {
+        missing.push("GMAIL_APP_PASSWORD");
+    }
+
+    return missing;
 }
 
 function getMailCredentials() {
