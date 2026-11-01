@@ -1,25 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
-  <title id="title">NVTS-MultiEncoder — logo en desarrollo</title>
-  <desc id="desc">Icono provisional de NVTS-MultiEncoder. El logotipo definitivo está en desarrollo.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#22A6A1"/>
-      <stop offset="1" stop-color="#155A66"/>
-    </linearGradient>
-    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".18"/>
-      <stop offset="1" stop-color="#FFFFFF" stop-opacity=".04"/>
-    </linearGradient>
-  </defs>
-  <rect width="512" height="512" rx="92" fill="#101521"/>
-  <rect x="18" y="18" width="476" height="476" rx="78" fill="url(#bg)"/>
-  <rect x="34" y="34" width="444" height="444" rx="64" fill="url(#panel)" stroke="#FFFFFF" stroke-opacity=".22" stroke-width="3"/>
-  <path d="M86 112h340" stroke="#FFFFFF" stroke-opacity=".2" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="104" cy="82" r="9" fill="#FFFFFF" fill-opacity=".75"/>
-  <circle cx="136" cy="82" r="9" fill="#FFFFFF" fill-opacity=".45"/>
-  <circle cx="168" cy="82" r="9" fill="#FFFFFF" fill-opacity=".25"/>
-  <text x="256" y="267" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="700" letter-spacing="2">ENC</text>
-  <rect x="66" y="354" width="380" height="76" rx="18" fill="#0B101A" fill-opacity=".82" stroke="#FFFFFF" stroke-opacity=".2"/>
-  <text x="256" y="385" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="1.2">LOGO EN</text>
-  <text x="256" y="414" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="1.2">DESARROLLO</text>
+  <title id="title">NVTS-MultiEncoder</title>
+  <desc id="desc">Icono oficial de NVTS-MultiEncoder, parte de la identidad visual de NamuVT Studios.</desc>
+  <rect x="21" y="21" width="470" height="470" rx="120" ry="120" fill="#805008"/>
+  
+<g fill="none" stroke="#FFE08A" stroke-width="32" stroke-linecap="square" stroke-linejoin="bevel">
+  <path d="M153 156c42-54 125-69 183-31 29 19 48 47 57 78"/>
+  <path d="M363 131l32 72-77-4"/>
+  <path d="M359 354c-42 54-125 69-183 31-29-19-48-47-57-78"/>
+  <path d="M149 379l-32-72 77 4"/>
+  <path d="M202 202h108l-22 34 22 34H202z"/>
+</g>
 </svg>

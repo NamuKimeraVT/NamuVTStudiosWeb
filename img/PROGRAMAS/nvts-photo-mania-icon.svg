@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect x="21" y="21" width="470" height="470" rx="120" ry="120" style="fill: red;"/>
-  <polygon points="431.08 136.07 395.06 198.83 395.1 198.83 368.42 303.19 341.53 198.83 307.85 136.07 271.83 198.83 271.83 370.35 315.24 370.35 315.24 239.54 348.62 370.35 387.91 370.35 421.36 239.54 421.36 370.35 464.76 370.35 464.76 198.83 431.08 136.07" style="fill: #c1272d;"/>
-  <path d="M222.19,159.91c-12.74-12.17-31.9-18.25-57.49-18.25h-46.49l-35.49-63.57-35.49,63.57v228.69l34.96,62.76,36.01-62.76v-84.86h38.69c28.49,0,49.69-6.5,63.57-19.5,13.88-13,20.83-31.04,20.83-54.13s-6.37-39.78-19.11-51.95ZM164.23,232.05c-5.51,4.73-15.08,7.1-28.7,7.1h-17.32v-51.01h20.12c13.21,0,22.2,2.5,26.99,7.49,4.78,4.99,7.18,11.08,7.18,18.25s-2.76,13.44-8.27,18.17Z" style="fill: #c1272d;"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">NVTS-PhotoMania</title>
+  <desc id="desc">Icono de cámara con diafragma para NVTS-PhotoMania.</desc>
+  <rect x="21" y="21" width="470" height="470" rx="120" ry="120" fill="#74101C"/>
+  <path fill="#FF7885" fill-rule="evenodd" d="
+    M110 157H174L205 111H307L338 157H402Q435 157 435 190V354Q435 386 403 386H109Q77 386 77 354V190Q77 157 110 157Z
+    M256 196A78 78 0 1 0 256 352A78 78 0 1 0 256 196Z"/>
+  <circle cx="256" cy="274" r="65" fill="none" stroke="#FF7885" stroke-width="18"/>
+  <g fill="#FF7885">
+    <path d="M256 225L289 239L274 264L250 259Z"/>
+    <path d="M256 225L289 239L274 264L250 259Z" transform="rotate(60 256 274)"/>
+    <path d="M256 225L289 239L274 264L250 259Z" transform="rotate(120 256 274)"/>
+    <path d="M256 225L289 239L274 264L250 259Z" transform="rotate(180 256 274)"/>
+    <path d="M256 225L289 239L274 264L250 259Z" transform="rotate(240 256 274)"/>
+    <path d="M256 225L289 239L274 264L250 259Z" transform="rotate(300 256 274)"/>
+  </g>
+  <circle cx="256" cy="274" r="15" fill="#74101C"/>
+  <rect x="350" y="185" width="35" height="35" rx="11" fill="#74101C"/>
 </svg>

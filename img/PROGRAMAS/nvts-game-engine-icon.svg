@@ -1,25 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
-  <title id="title">NVTS-GameEngine — logo en desarrollo</title>
-  <desc id="desc">Icono provisional de NVTS-GameEngine. El logotipo definitivo está en desarrollo.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#36A4B8"/>
-      <stop offset="1" stop-color="#1D4E69"/>
-    </linearGradient>
-    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".18"/>
-      <stop offset="1" stop-color="#FFFFFF" stop-opacity=".04"/>
-    </linearGradient>
-  </defs>
-  <rect width="512" height="512" rx="92" fill="#101521"/>
-  <rect x="18" y="18" width="476" height="476" rx="78" fill="url(#bg)"/>
-  <rect x="34" y="34" width="444" height="444" rx="64" fill="url(#panel)" stroke="#FFFFFF" stroke-opacity=".22" stroke-width="3"/>
-  <path d="M86 112h340" stroke="#FFFFFF" stroke-opacity=".2" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="104" cy="82" r="9" fill="#FFFFFF" fill-opacity=".75"/>
-  <circle cx="136" cy="82" r="9" fill="#FFFFFF" fill-opacity=".45"/>
-  <circle cx="168" cy="82" r="9" fill="#FFFFFF" fill-opacity=".25"/>
-  <text x="256" y="267" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" letter-spacing="2">GAME</text>
-  <rect x="66" y="354" width="380" height="76" rx="18" fill="#0B101A" fill-opacity=".82" stroke="#FFFFFF" stroke-opacity=".2"/>
-  <text x="256" y="385" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="1.2">LOGO EN</text>
-  <text x="256" y="414" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="1.2">DESARROLLO</text>
+  <title id="title">NVTS-GameEngine</title>
+  <desc id="desc">Icono oficial de NVTS-GameEngine, parte de la identidad visual de NamuVT Studios.</desc>
+  <rect x="21" y="21" width="470" height="470" rx="120" ry="120" fill="#155334"/>
+  
+<g fill="#9BE7B1" stroke="#9BE7B1" stroke-width="18" stroke-linejoin="round">
+  <path d="M128 177c16-33 45-51 84-51h88c39 0 68 18 84 51l48 119c18 45-10 82-48 82-21 0-37-11-54-31l-33-38h-82l-33 38c-17 20-33 31-54 31-38 0-66-37-48-82z"/>
+  <path d="M168 236h88v30h-88z M197 207v88h30v-88z" fill="#155334" stroke="none"/>
+  <circle cx="338" cy="239" r="19" fill="#155334" stroke="none"/><circle cx="382" cy="282" r="19" fill="#155334" stroke="none"/>
+</g>
 </svg>

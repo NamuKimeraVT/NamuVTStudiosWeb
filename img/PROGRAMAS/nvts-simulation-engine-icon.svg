@@ -1,25 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
-  <title id="title">NVTS-SimulationEngine — logo en desarrollo</title>
-  <desc id="desc">Icono provisional de NVTS-SimulationEngine. El logotipo definitivo está en desarrollo.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#36A58A"/>
-      <stop offset="1" stop-color="#1B5C53"/>
-    </linearGradient>
-    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".18"/>
-      <stop offset="1" stop-color="#FFFFFF" stop-opacity=".04"/>
-    </linearGradient>
-  </defs>
-  <rect width="512" height="512" rx="92" fill="#101521"/>
-  <rect x="18" y="18" width="476" height="476" rx="78" fill="url(#bg)"/>
-  <rect x="34" y="34" width="444" height="444" rx="64" fill="url(#panel)" stroke="#FFFFFF" stroke-opacity=".22" stroke-width="3"/>
-  <path d="M86 112h340" stroke="#FFFFFF" stroke-opacity=".2" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="104" cy="82" r="9" fill="#FFFFFF" fill-opacity=".75"/>
-  <circle cx="136" cy="82" r="9" fill="#FFFFFF" fill-opacity=".45"/>
-  <circle cx="168" cy="82" r="9" fill="#FFFFFF" fill-opacity=".25"/>
-  <text x="256" y="267" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="700" letter-spacing="2">SIM</text>
-  <rect x="66" y="354" width="380" height="76" rx="18" fill="#0B101A" fill-opacity=".82" stroke="#FFFFFF" stroke-opacity=".2"/>
-  <text x="256" y="385" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="1.2">LOGO EN</text>
-  <text x="256" y="414" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="1.2">DESARROLLO</text>
+  <title id="title">NVTS-SimulationEngine</title>
+  <desc id="desc">Icono oficial de NVTS-SimulationEngine, parte de la identidad visual de NamuVT Studios.</desc>
+  <rect x="21" y="21" width="470" height="470" rx="120" ry="120" fill="#155334"/>
+  
+<g fill="none" stroke="#9BE7B1" stroke-width="27" stroke-linecap="square">
+  <ellipse cx="256" cy="256" rx="170" ry="76"/>
+  <ellipse cx="256" cy="256" rx="170" ry="76" transform="rotate(60 256 256)"/>
+  <ellipse cx="256" cy="256" rx="170" ry="76" transform="rotate(120 256 256)"/>
+</g>
+<circle cx="256" cy="256" r="35" fill="#9BE7B1"/><circle cx="408" cy="195" r="19" fill="#9BE7B1"/><circle cx="171" cy="400" r="19" fill="#9BE7B1"/>
 </svg>
