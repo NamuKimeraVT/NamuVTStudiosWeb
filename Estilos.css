@@ -438,14 +438,14 @@ h3 {
 
 .card-arrow {
     position: absolute;
-    right: 25px;
-    bottom: 23px;
+    right: 20px;
+    bottom: 20px;
     color: var(--accent-2);
 }
 
 .ecosystem-callout {
-    margin: 95px 0;
-    padding: 55px;
+    margin: 95px;
+    padding: 50px;
     display: grid;
     grid-template-columns: 1fr .8fr;
     gap: 35px;
@@ -456,7 +456,7 @@ h3 {
 }
 
 .ecosystem-callout p {
-    max-width: 550px;
+    max-width: 500px;
 }
 
 .ecosystem-callout .button {
@@ -464,7 +464,7 @@ h3 {
 }
 
 .platform-visual {
-    height: 260px;
+    height: 200px;
     position: relative;
     display: grid;
     place-items: center;
@@ -662,7 +662,7 @@ h3 {
 }
 
 .content-section {
-    padding: 65px 0;
+    padding: 60px 0;
 }
 
 .section-title-row {
@@ -1242,6 +1242,324 @@ summary:focus-visible {
     outline-offset: 3px;
 }
 
+
+/* Catálogo oficial de los 25 programas NVTS. */
+.ecosystem-catalog {
+    border-top: 1px solid var(--line);
+}
+
+.ecosystem-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.ecosystem-card {
+    min-height: 4em;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .025);
+    transition: transform .22s ease, border-color .22s ease, background .22s ease;
+}
+
+.ecosystem-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(155, 140, 255, .48);
+    background: rgba(255, 255, 255, .04);
+}
+
+.ecosystem-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 1em;
+}
+
+.ecosystem-number {
+    color: var(--accent-2);
+    font: 700 9px 'Space Grotesk', sans-serif;
+    letter-spacing: .12em;
+}
+
+.ecosystem-category {
+    display: block;
+    margin-top: 20px;
+    color: var(--accent);
+    font: 700 9px 'Space Grotesk', sans-serif;
+    letter-spacing: .12em;
+}
+
+.ecosystem-card h3 {
+    margin: 10px 0;
+    font-size: 19px;
+    overflow-wrap: anywhere;
+}
+
+.ecosystem-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+.ecosystem-card .card-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 18px;
+    color: var(--accent-2);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.launcher-feature {
+    margin-top: 24px;
+}
+
+.launcher-copy {
+    max-width: 760px;
+}
+
+.launcher-copy p {
+    line-height: 1.8;
+}
+
+.complementary-section {
+    border-top: 1px solid var(--line);
+}
+
+
+/* Iconografía del ecosistema: iconos cuadrados y consistentes. */
+.ecosystem-card {
+    min-width: 0;
+    min-height: 390px;
+    padding: 20px;
+}
+
+.ecosystem-icon {
+    display: block;
+    width: 96px;
+    height: 96px;
+    margin: 15px 0 15px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    object-fit: cover;
+    background: var(--surface-2);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .22);
+}
+
+.ecosystem-card h3 {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.ecosystem-card p {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.launcher-feature {
+    display: grid;
+    grid-template-columns: 104px minmax(0, 1fr) auto;
+    align-items: center;
+}
+
+.launcher-icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    object-fit: cover;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .22);
+}
+
+.launcher-copy {
+    min-width: 0;
+}
+
+
+/* Ajustes de fluidez global para evitar desbordes en pantallas estrechas. */
+.page-shell {
+    width: min(100%, var(--max));
+}
+
+main,
+section,
+article,
+footer,
+.nav-wrap,
+.footer-main {
+    min-width: 0;
+}
+
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+}
+
+
+/* Movimiento y microinteracciones globales. */
+:root {
+    scroll-behavior: smooth;
+}
+
+.site-header {
+    transition: background .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.site-header.has-scrolled {
+    background: rgba(10, 13, 22, .96);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .24);
+}
+
+.button,
+.social-link,
+.text-link,
+.site-nav a,
+.menu-toggle {
+    transition:
+        transform .22s ease,
+        color .22s ease,
+        background .22s ease,
+        border-color .22s ease,
+        box-shadow .22s ease;
+}
+
+.button:active,
+.menu-toggle:active {
+    transform: scale(.97);
+}
+
+.feature-card,
+.product-card,
+.game-card,
+.ecosystem-card,
+.person-card,
+.contact-form,
+.faq-item {
+    will-change: transform;
+}
+
+.feature-card:hover,
+.product-card:hover,
+.game-card:hover,
+.ecosystem-card:hover,
+.person-card:hover {
+    box-shadow: 0 18px 42px rgba(0, 0, 0, .18);
+}
+
+.ecosystem-icon,
+.launcher-icon,
+.person-avatar img,
+.product-visual img,
+.game-cover img {
+    transition: transform .3s ease, filter .3s ease;
+}
+
+.ecosystem-card:hover .ecosystem-icon,
+.launcher-section:hover .launcher-icon,
+.person-card:hover .person-avatar img {
+    transform: scale(1.045);
+}
+
+/* Las clases reveal se agregan desde site.js al entrar los elementos en pantalla. */
+.reveal {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+    transition:
+        opacity .65s ease var(--reveal-delay, 0ms),
+        transform .65s cubic-bezier(.2, .7, .2, 1) var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Tarjetas del ecosistema: icono, contenido y estado se mantienen ordenados. */
+.ecosystem-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.ecosystem-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(circle at 0 0, rgba(155, 140, 255, .11), transparent 55%);
+    transition: opacity .25s ease;
+}
+
+.ecosystem-card:hover::before {
+    opacity: 1;
+}
+
+.ecosystem-icon {
+    flex: 0 0 auto;
+    object-position: center;
+}
+
+/* Formulario: feedback visible mientras espera el backend. */
+.contact-form button:disabled {
+    cursor: wait;
+    opacity: .72;
+    transform: none;
+}
+
+.form-note {
+    min-height: 1.5em;
+    line-height: 1.6;
+}
+
+.form-note.sending {
+    color: var(--accent-2);
+}
+
+.form-trap {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+
+.reveal.is-visible.feature-card:hover,
+.reveal.is-visible.product-card:hover,
+.reveal.is-visible.game-card:hover,
+.reveal.is-visible.ecosystem-card:hover,
+.reveal.is-visible.person-card:hover {
+    transform: translate3d(0, -5px, 0);
+}
+
+
+/* Campos contextuales del formulario de contacto. */
+.conditional-field {
+    display: grid;
+    gap: 10px;
+}
+
+.conditional-field[hidden] {
+    display: none !important;
+}
+
+.conditional-field:not([hidden]) {
+    animation: contact-field-enter .24s ease-out both;
+}
+
 @media(max-width:900px) {
     .site-nav {
         gap: 15px;
@@ -1541,105 +1859,6 @@ summary:focus-visible {
     }
 }
 
-/* Catálogo oficial de los 25 programas NVTS. */
-.ecosystem-catalog {
-    border-top: 1px solid var(--line);
-}
-
-.ecosystem-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
-}
-
-.ecosystem-card {
-    min-height: 245px;
-    padding: 22px;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--line);
-    border-radius: 17px;
-    background: rgba(255, 255, 255, .025);
-    transition: transform .22s ease, border-color .22s ease, background .22s ease;
-}
-
-.ecosystem-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(155, 140, 255, .48);
-    background: rgba(255, 255, 255, .04);
-}
-
-.ecosystem-card-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    min-height: 25px;
-}
-
-.ecosystem-number {
-    color: var(--accent-2);
-    font: 700 9px 'Space Grotesk', sans-serif;
-    letter-spacing: .12em;
-}
-
-.ecosystem-category {
-    display: block;
-    margin-top: 22px;
-    color: var(--accent);
-    font: 700 9px 'Space Grotesk', sans-serif;
-    letter-spacing: .12em;
-}
-
-.ecosystem-card h3 {
-    margin: 10px 0;
-    font-size: 19px;
-    overflow-wrap: anywhere;
-}
-
-.ecosystem-card p {
-    margin: 0;
-    color: var(--muted);
-    font-size: 12px;
-    line-height: 1.75;
-}
-
-.ecosystem-card .card-action {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: auto;
-    padding-top: 18px;
-    color: var(--accent-2);
-    font-size: 11px;
-    font-weight: 700;
-}
-
-.works-card {
-    border-color: rgba(84, 214, 208, .3);
-    background: linear-gradient(145deg, rgba(84, 214, 208, .07), rgba(155, 140, 255, .06));
-}
-
-.works-card .ecosystem-category {
-    color: #77ddd5;
-}
-
-.launcher-feature {
-    margin-top: 24px;
-}
-
-.launcher-copy {
-    max-width: 760px;
-}
-
-.launcher-copy p {
-    line-height: 1.8;
-}
-
-.complementary-section {
-    border-top: 1px solid var(--line);
-}
-
 @media (max-width: 900px) {
     .ecosystem-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1654,56 +1873,6 @@ summary:focus-visible {
     .ecosystem-card {
         min-height: 0;
     }
-}
-
-
-
-/* Iconografía del ecosistema: iconos cuadrados y consistentes. */
-.ecosystem-card {
-    min-width: 0;
-    min-height: 390px;
-    padding: 20px;
-}
-
-.ecosystem-icon {
-    display: block;
-    width: 96px;
-    height: 96px;
-    margin: 17px 0 15px;
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    object-fit: cover;
-    background: var(--surface-2);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, .22);
-}
-
-.ecosystem-card h3 {
-    min-width: 0;
-    overflow-wrap: anywhere;
-}
-
-.ecosystem-card p {
-    flex: 1 1 auto;
-    min-width: 0;
-}
-
-.launcher-feature {
-    display: grid;
-    grid-template-columns: 104px minmax(0, 1fr) auto;
-    align-items: center;
-}
-
-.launcher-icon {
-    width: 96px;
-    height: 96px;
-    border-radius: 20px;
-    border: 1px solid var(--line);
-    object-fit: cover;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, .22);
-}
-
-.launcher-copy {
-    min-width: 0;
 }
 
 /* El menú pasa a formato desplegable antes de que los enlaces se compriman. */
@@ -1827,27 +1996,6 @@ summary:focus-visible {
     }
 }
 
-/* Ajustes de fluidez global para evitar desbordes en pantallas estrechas. */
-.page-shell {
-    width: min(100%, var(--max));
-}
-
-main,
-section,
-article,
-footer,
-.nav-wrap,
-.footer-main {
-    min-width: 0;
-}
-
-input,
-select,
-textarea,
-button {
-    max-width: 100%;
-}
-
 @media (max-width: 760px) {
     .contact-layout {
         grid-template-columns: minmax(0, 1fr);
@@ -1925,138 +2073,6 @@ button {
         padding-right: 16px;
         padding-left: 16px;
     }
-}
-
-
-/* Movimiento y microinteracciones globales. */
-:root {
-    scroll-behavior: smooth;
-}
-
-.site-header {
-    transition: background .25s ease, box-shadow .25s ease, border-color .25s ease;
-}
-
-.site-header.has-scrolled {
-    background: rgba(10, 13, 22, .96);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, .24);
-}
-
-.button,
-.social-link,
-.text-link,
-.site-nav a,
-.menu-toggle {
-    transition:
-        transform .22s ease,
-        color .22s ease,
-        background .22s ease,
-        border-color .22s ease,
-        box-shadow .22s ease;
-}
-
-.button:active,
-.menu-toggle:active {
-    transform: scale(.97);
-}
-
-.feature-card,
-.product-card,
-.game-card,
-.ecosystem-card,
-.person-card,
-.contact-form,
-.faq-item {
-    will-change: transform;
-}
-
-.feature-card:hover,
-.product-card:hover,
-.game-card:hover,
-.ecosystem-card:hover,
-.person-card:hover {
-    box-shadow: 0 18px 42px rgba(0, 0, 0, .18);
-}
-
-.ecosystem-icon,
-.launcher-icon,
-.person-avatar img,
-.product-visual img,
-.game-cover img {
-    transition: transform .3s ease, filter .3s ease;
-}
-
-.ecosystem-card:hover .ecosystem-icon,
-.launcher-section:hover .launcher-icon,
-.person-card:hover .person-avatar img {
-    transform: scale(1.045);
-}
-
-/* Las clases reveal se agregan desde site.js al entrar los elementos en pantalla. */
-.reveal {
-    opacity: 0;
-    transform: translate3d(0, 22px, 0);
-    transition:
-        opacity .65s ease var(--reveal-delay, 0ms),
-        transform .65s cubic-bezier(.2, .7, .2, 1) var(--reveal-delay, 0ms);
-}
-
-.reveal.is-visible {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-}
-
-/* Tarjetas del ecosistema: icono, contenido y estado se mantienen ordenados. */
-.ecosystem-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.ecosystem-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0;
-    background: radial-gradient(circle at 0 0, rgba(155, 140, 255, .11), transparent 55%);
-    transition: opacity .25s ease;
-}
-
-.ecosystem-card:hover::before {
-    opacity: 1;
-}
-
-.ecosystem-icon {
-    flex: 0 0 auto;
-    object-position: center;
-}
-
-/* Formulario: feedback visible mientras espera el backend. */
-.contact-form button:disabled {
-    cursor: wait;
-    opacity: .72;
-    transform: none;
-}
-
-.form-note {
-    min-height: 1.5em;
-    line-height: 1.6;
-}
-
-.form-note.sending {
-    color: var(--accent-2);
-}
-
-.form-trap {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    clip: rect(0, 0, 0, 0) !important;
-    white-space: nowrap !important;
-    border: 0 !important;
 }
 
 @media (max-width: 900px) {
@@ -2191,26 +2207,6 @@ button {
     }
 }
 
-.reveal.is-visible.feature-card:hover,
-.reveal.is-visible.product-card:hover,
-.reveal.is-visible.game-card:hover,
-.reveal.is-visible.ecosystem-card:hover,
-.reveal.is-visible.person-card:hover {
-    transform: translate3d(0, -5px, 0);
-}
-
-
-/* Campos contextuales del formulario de contacto. */
-.conditional-field {
-    display: grid;
-    gap: 10px;
-}
-
-.conditional-field[hidden] {
-    display: none !important;
-}
-
-
 @keyframes contact-field-enter {
     from {
         opacity: 0;
@@ -2221,10 +2217,6 @@ button {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.conditional-field:not([hidden]) {
-    animation: contact-field-enter .24s ease-out both;
 }
 
 @media (prefers-reduced-motion: reduce) {
