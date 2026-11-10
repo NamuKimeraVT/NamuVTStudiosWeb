@@ -1,130 +1,80 @@
 <!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta content="#0b0d14" name="theme-color" />
-    <meta
-        content="Contact&aacute; a NamuVT Studios para consultas, oportunidades de trabajo o ayuda con pedidos de la tienda."
-        name="description" />
-    <meta content="website" property="og:type" />
-    <meta content="Contacto | NamuVT Studios" property="og:title" />
-    <meta
-        content="Contact&aacute; a NamuVT Studios para consultas, oportunidades de trabajo o ayuda con pedidos de la tienda."
-        property="og:description" />
-    <title>
-        Contacto | NamuVT Studios
-    </title>
-    <link href="img/Foto de Perfil.jpg" rel="icon" type="image/jpeg" />
-    <link href="img/Foto de Perfil.jpg" rel="apple-touch-icon" />
-    <link href="Estilos.css" rel="stylesheet" />
-    <script defer="defer" src="load-shared-fragments.js">
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <meta content="#0b0d14" name="theme-color">
+        <meta content="Contact NamuVT Studios with questions, job inquiries, or store order support." name="description">
+        <meta content="website" property="og:type">
+        <meta content="Contact | NamuVT Studios" property="og:title">
+        <meta content="Contact NamuVT Studios with questions, job inquiries, or store order support." property="og:description">
+        <title>Contact | NamuVT Studios</title>
+        <link href="img/Foto%20de%20Perfil.jpg" rel="icon" type="image/jpeg">
+        <link href="img/Foto%20de%20Perfil.jpg" rel="apple-touch-icon">
+        <link href="Estilos.css" rel="stylesheet">
+        <script defer src="load-shared-fragments.js">
     </script>
-    <script defer="defer" src="site.js">
+        <script defer src="i18n.js"></script>
+        <script defer src="site.js">
     </script>
-</head>
-
-<body>
-    <header class="site-header" id="site-header">
+    </head>
+    <body>
+        <header class="site-header" id="site-header">
     </header>
-    <main>
-        <div class="page-shell">
-            <section class="page-hero">
-                <span class="eyebrow">
-                    CONTACTO
-                </span>
-                <h1>
-                    &iquest;En qu&eacute; podemos
-                    <span>
-                        ayudarte?
-                    </span>
-                </h1>
-                <p>
-                    Hacenos una pregunta, escribinos para sumarte al equipo o contanos si tu pedido de la tienda
-                    todav&iacute;a no lleg&oacute;.
-                </p>
-            </section>
-            <section class="contact-layout">
-                <div class="contact-aside">
-                    <span class="eyebrow">
-                        CANALES DE CONTACTO
-                    </span>
-                    <h2>
-                        Estamos para
-                        <br />
-                        escucharte.
-                    </h2>
-                    <p>
-                        Eleg&iacute; el motivo de tu mensaje y contanos qu&eacute; necesit&aacute;s. Recibiremos tu
-                        consulta en el correo de NamuVT Studios.
-                    </p>
-                    <div class="contact-detail">
-                        <span>
-                            Correo
-                        </span>
-                        <a href="mailto:namuquimera@gmail.com">
-                            namuquimera@gmail.com &nearrow;
+        <main>
+            <div class="page-shell">
+                <section class="page-hero">
+                    <span class="eyebrow">CONTACT</span>
+                    <h1>How can we<span>help you?</span>
+                    </h1>
+                    <p>Ask us a question, get in touch about joining the team, or let us know if your store order has not arrived.</p>
+                </section>
+                <section class="contact-layout">
+                    <div class="contact-aside">
+                        <span class="eyebrow">CONTACT CHANNELS</span>
+                        <h2>We are here to<br>listen.</h2>
+                        <p>Choose a reason for your message and tell us what you need. Your inquiry will be sent to the NamuVT Studios team.</p>
+                        <div class="contact-detail">
+                            <span>Email</span>
+                            <a href="mailto:namuquimera@gmail.com">
+                            namuquimera@gmail.com ↗
                         </a>
+                        </div>
+                        <div class="contact-detail">
+                            <span>Social media</span>
+                            <p>You can also find us on our official channels.</p>
+                        </div>
                     </div>
-                    <div class="contact-detail">
-                        <span>
-                            Redes sociales
-                        </span>
-                        <p>
-                            Tambi&eacute;n pod&eacute;s encontrarnos en nuestros canales oficiales.
-                        </p>
-                    </div>
-                </div>
-                <form class="contact-form" id="contact-form" method="post" action="/api/contact">
-                    <input type="text" name="companyWebsite" class="form-trap" tabindex="-1" autocomplete="off"
-                        aria-hidden="true">
-
-                    <label for="contact-name">Nombre</label>
-                    <input autocomplete="name" id="contact-name" name="name" placeholder="Tu nombre" maxlength="100"
-                        required type="text">
-
-                    <label for="contact-email">Correo electr&oacute;nico</label>
-                    <input autocomplete="email" id="contact-email" name="email" placeholder="nombre@correo.com"
-                        maxlength="254" required type="email">
-
-                    <label for="contact-topic">&iquest;Por qu&eacute; quer&eacute;s contactarnos?</label>
-                    <select id="contact-topic" name="topic" required>
-                        <option value="Consulta o pregunta">Tengo una pregunta o consulta</option>
-                        <option value="Quiero trabajar en NamuVT Studios">Quiero trabajar en NamuVT Studios</option>
-                        <option value="Problema con un pedido de la tienda">Tengo un problema con un pedido de la tienda
-                        </option>
-                    </select>
-
-                    <div class="conditional-field" id="portfolio-field" hidden>
-                        <label for="contact-portfolio">Portfolio, CV o perfil profesional (opcional)</label>
-                        <input autocomplete="url" id="contact-portfolio" name="portfolioUrl" placeholder="https://..."
-                            maxlength="500" type="url" disabled>
-                    </div>
-
-                    <div class="conditional-field" id="order-field" hidden>
-                        <label for="contact-order">N&uacute;mero de pedido (opcional)</label>
-                        <input id="contact-order" name="orderNumber" placeholder="Por ejemplo: NVTS-10025"
-                            maxlength="80" type="text" disabled>
-                    </div>
-
-                    <label for="contact-message">Mensaje</label>
-                    <textarea id="contact-message" name="message" placeholder="Contanos c&oacute;mo podemos ayudarte..."
-                        minlength="10" maxlength="6000" required rows="6"></textarea>
-
-                    <button class="button button-primary" type="submit">
-                        Enviar mensaje
-                        <span aria-hidden="true">&nearrow;</span>
-                    </button>
-                    <p aria-live="polite" class="form-note" id="form-note">
-                        Tu mensaje se enviar&aacute; directamente al equipo de NamuVT Studios.
-                    </p>
-                </form>
-            </section>
-        </div>
-    </main>
-    <footer class="site-footer" id="site-footer">
+                    <form class="contact-form" id="contact-form" method="post" action="/api/contact">
+                        <input type="text" name="companyWebsite" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <label for="contact-name">Name</label>
+                        <input autocomplete="name" id="contact-name" name="name" placeholder="Your name" maxlength="100" required type="text">
+                        <label for="contact-email">Email address</label>
+                        <input autocomplete="email" id="contact-email" name="email" placeholder="name@email.com" maxlength="254" required type="email">
+                        <label for="contact-topic">Why are you contacting us?</label>
+                        <select id="contact-topic" name="topic" required>
+                            <option value="General question or inquiry">I have a question or inquiry</option>
+                            <option value="I would like to work at NamuVT Studios">I would like to work at NamuVT Studios</option>
+                            <option value="Store order issue">I have an issue with a store order</option>
+                        </select>
+                        <div class="conditional-field" id="portfolio-field" hidden>
+                            <label for="contact-portfolio">Portfolio, resume, or professional profile (optional)</label>
+                            <input autocomplete="url" id="contact-portfolio" name="portfolioUrl" placeholder="https://..." maxlength="500" type="url" disabled>
+                        </div>
+                        <div class="conditional-field" id="order-field" hidden>
+                            <label for="contact-order">Order number (optional)</label>
+                            <input id="contact-order" name="orderNumber" placeholder="For example: NVTS-10025" maxlength="80" type="text" disabled>
+                        </div>
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" placeholder="Tell us how we can help..." minlength="10" maxlength="6000" required rows="6"></textarea>
+                        <button class="button button-primary" type="submit">Send message<span aria-hidden="true">↗</span>
+                        </button>
+                        <p aria-live="polite" class="form-note" id="form-note">Your message will be sent directly to the NamuVT Studios team.</p>
+                    </form>
+                </section>
+            </div>
+        </main>
+        <footer class="site-footer" id="site-footer">
     </footer>
-</body>
-
+    </body>
 </html>

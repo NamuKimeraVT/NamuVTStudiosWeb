@@ -2,37 +2,37 @@ import nodemailer from "nodemailer";
 
 const RECIPIENT_EMAIL = "namuquimera@gmail.com";
 const ALLOWED_TOPICS = new Set([
-    "Consulta o pregunta",
-    "Quiero trabajar en NamuVT Studios",
-    "Problema con un pedido de la tienda"
+    "General question or inquiry",
+    "I would like to work at NamuVT Studios",
+    "Store order issue"
 ]);
 const MIN_FORM_TIME_MS = 1800;
 const MAX_FORM_AGE_MS = 2 * 60 * 60 * 1000;
 const RATE_LIMIT_MS = 30 * 1000;
 
-// Límite de mejor esfuerzo por instancia. El honeypot y la validación del servidor
-// siguen activos aunque Vercel cree una instancia nueva de la función.
+// Best-effort per-instance limit. The honeypot and server-side validation
+// remain active even when Vercel creates a new function instance.
 const recentSubmissions = new Map();
 
 async function handleContactRequest(request) {
     if (request.method !== "POST") {
-        return jsonResponse({ message: "Método no permitido." }, 405, {
+        return jsonResponse({ message: "Method not allowed." }, 405, {
             Allow: "POST"
         });
     }
 
     if (!isSameOriginRequest(request)) {
-        return jsonResponse({ message: "Solicitud no permitida." }, 403);
+        return jsonResponse({ message: "Request not allowed." }, 403);
     }
 
     const payload = await readRequestBody(request);
 
     if (!payload) {
-        return jsonResponse({ message: "El formulario contiene datos inválidos." }, 400);
+        return jsonResponse({ message: "The form contains invalid data." }, 400);
     }
 
     if (payload.companyWebsite) {
-        return jsonResponse({ message: "Mensaje recibido." }, 200);
+        return jsonResponse({ message: "Message received." }, 200);
     }
 
     const contact = validateContact(payload);
@@ -45,7 +45,7 @@ async function handleContactRequest(request) {
 
     if (isRateLimited(ipAddress)) {
         return jsonResponse({
-            message: "Ya recibimos un envío reciente. Esperá unos segundos antes de intentarlo otra vez."
+            message: "We recently received a submission. Please wait a few seconds before trying again."
         }, 429);
     }
 
@@ -53,21 +53,21 @@ async function handleContactRequest(request) {
 
     if (!mailCredentials) {
         const missingVariables = getMissingMailVariables();
-        console.error("Configuración de correo incompleta. Variables ausentes:", missingVariables.join(", "));
+        console.error("Incomplete email configuration. Missing variables:", missingVariables.join(", "));
         return jsonResponse({
-            message: "El servicio de correo no está configurado. Revisá GMAIL_USER y GMAIL_APP_PASSWORD en las variables de entorno de Vercel y volvé a desplegar."
+            message: "The email service is not configured. Check GMAIL_USER and GMAIL_APP_PASSWORD in your Vercel environment variables, then redeploy."
         }, 503);
     }
 
     try {
         await sendContactEmail(contact.value, mailCredentials);
         return jsonResponse({
-            message: "Tu mensaje se envió correctamente. Gracias por contactar a NamuVT Studios."
+            message: "Your message was sent successfully. Thank you for contacting NamuVT Studios."
         }, 200);
     } catch (error) {
-        console.error("No se pudo entregar el correo de contacto:", error?.code || error?.name || "EMAIL_ERROR");
+        console.error("Could not deliver the contact email:", error?.code || error?.name || "EMAIL_ERROR");
         return jsonResponse({
-            message: "No pudimos enviar el mensaje en este momento. Intentá nuevamente más tarde."
+            message: "We could not send your message right now. Please try again later."
         }, 502);
     }
 }
@@ -138,35 +138,35 @@ function validateContact(payload) {
     const elapsed = Date.now() - startedAt;
 
     if (!name || !email || !message) {
-        return invalidContact("Completá tu nombre, correo electrónico y mensaje.");
+        return invalidContact("Please enter your name, email address, and message.");
     }
 
     if (!ALLOWED_TOPICS.has(topic)) {
-        return invalidContact("Seleccioná uno de los motivos de contacto disponibles.");
+        return invalidContact("Please select one of the available contact reasons.");
     }
 
     if (!isValidEmail(email)) {
-        return invalidContact("Ingresá una dirección de correo electrónico válida.");
+        return invalidContact("Please enter a valid email address.");
     }
 
     if (message.length < 10) {
-        return invalidContact("El mensaje debe contener al menos 10 caracteres.");
+        return invalidContact("The message must contain at least 10 characters.");
     }
 
-    if (portfolioUrl && topic !== "Quiero trabajar en NamuVT Studios") {
-        return invalidContact("El enlace de portfolio solo corresponde a postulaciones laborales.");
+    if (portfolioUrl && topic !== "I would like to work at NamuVT Studios") {
+        return invalidContact("The portfolio link is only available for job inquiries.");
     }
 
-    if (orderNumber && topic !== "Problema con un pedido de la tienda") {
-        return invalidContact("El número de pedido solo corresponde a consultas sobre la tienda.");
+    if (orderNumber && topic !== "Store order issue") {
+        return invalidContact("The order number is only available for store inquiries.");
     }
 
     if (portfolioUrl && !isValidHttpUrl(portfolioUrl)) {
-        return invalidContact("El enlace al portfolio o CV debe ser una URL válida.");
+        return invalidContact("The portfolio or resume link must be a valid URL.");
     }
 
     if (!Number.isFinite(startedAt) || elapsed < MIN_FORM_TIME_MS || elapsed > MAX_FORM_AGE_MS) {
-        return invalidContact("No pudimos validar el envío. Actualizá la página e intentá nuevamente.");
+        return invalidContact("We could not validate your submission. Refresh the page and try again.");
     }
 
     return {
@@ -304,21 +304,21 @@ async function sendContactEmail(contact, credentials) {
             replyTo: contact.email,
             subject: `[NamuVT Studios] ${contact.topic} — ${subjectName}`,
             text: [
-                "Nuevo mensaje desde el formulario de NamuVT Studios",
+                "New message from the NamuVT Studios contact form",
                 "",
-                `Nombre: ${contact.name}`,
-                `Correo: ${contact.email}`,
-                `Motivo: ${contact.topic}`,
+                `Name: ${contact.name}`,
+                `Email: ${contact.email}`,
+                `Reason: ${contact.topic}`,
                 ...optionalText,
                 "",
                 contact.message
             ].join("\n"),
             html: `
                 <div style="font-family:Arial,sans-serif;line-height:1.6;color:#18202b;max-width:680px">
-                    <h2>Nuevo mensaje desde NamuVT Studios</h2>
-                    <p><strong>Nombre:</strong> ${safeName}</p>
-                    <p><strong>Correo:</strong> ${safeEmail}</p>
-                    <p><strong>Motivo:</strong> ${safeTopic}</p>
+                    <h2>New message from NamuVT Studios</h2>
+                    <p><strong>Name:</strong> ${safeName}</p>
+                    <p><strong>Email:</strong> ${safeEmail}</p>
+                    <p><strong>Reason:</strong> ${safeTopic}</p>
                     ${optionalHtml}
                     <hr>
                     <p>${safeMessage}</p>
@@ -334,7 +334,7 @@ function buildOptionalEmailText(contact) {
     const lines = [];
 
     if (contact.orderNumber) {
-        lines.push(`Número de pedido: ${contact.orderNumber}`);
+        lines.push(`Order number: ${contact.orderNumber}`);
     }
 
     if (contact.portfolioUrl) {
@@ -348,7 +348,7 @@ function buildOptionalEmailHtml(orderNumber, portfolioUrl) {
     const fields = [];
 
     if (orderNumber) {
-        fields.push(`<p><strong>Número de pedido:</strong> ${orderNumber}</p>`);
+        fields.push(`<p><strong>Order number:</strong> ${orderNumber}</p>`);
     }
 
     if (portfolioUrl) {

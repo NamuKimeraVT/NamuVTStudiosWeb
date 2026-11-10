@@ -1,11 +1,11 @@
 "use strict";
 
 /*
- * site.js centraliza el comportamiento compartido del sitio:
- * - inicializa el menú cargado por load-shared-fragments.js;
- * - marca el enlace de la página actual y actualiza el año del footer;
- * - activa animaciones de entrada al desplazarse por la página;
- * - envía el formulario de Contacto.html al backend /api/contact.
+ * site.js centralizes shared site behavior:
+ * - initializes the menu loaded by load-shared-fragments.js;
+ * - marks the current page link and updates the footer year;
+ * - triggers reveal animations as content enters the viewport;
+ * - submits the Contact.html form to the /api/contact backend.
  */
 
 const REVEAL_SELECTOR = [
@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", initializeSite);
 document.addEventListener("nvts:fragments-loaded", initializeSite);
 
 function initializeSite() {
+    window.NVTSI18n?.apply();
     initializeNavigation();
     initializeYear();
     initializeContactForm();
@@ -63,9 +64,10 @@ function handleNavigationToggle(event) {
 
 function setNavigationAccessibility(toggle, isOpen) {
     toggle.setAttribute("aria-expanded", String(isOpen));
+    const label = isOpen ? "Close menu" : "Open menu";
     toggle.setAttribute(
         "aria-label",
-        isOpen ? "Cerrar menú" : "Abrir menú"
+        window.NVTSI18n?.translate(label) || label
     );
 }
 
@@ -260,11 +262,11 @@ function updateConditionalContactFields(form) {
 
     setConditionalField(
         portfolioField,
-        topic === "Quiero trabajar en NamuVT Studios"
+        topic === "I would like to work at NamuVT Studios"
     );
     setConditionalField(
         orderField,
-        topic === "Problema con un pedido de la tienda"
+        topic === "Store order issue"
     );
 }
 
@@ -293,7 +295,7 @@ function collectContactData(form) {
     return {
         name: String(formData.get("name") || "").trim(),
         email: String(formData.get("email") || "").trim(),
-        topic: String(formData.get("topic") || "Consulta o pregunta").trim(),
+        topic: String(formData.get("topic") || "General question or inquiry").trim(),
         portfolioUrl: String(formData.get("portfolioUrl") || "").trim(),
         orderNumber: String(formData.get("orderNumber") || "").trim(),
         message: String(formData.get("message") || "").trim(),
@@ -305,7 +307,7 @@ function collectContactData(form) {
 async function sendContactMessage(form, button, originalButtonMarkup, contact) {
     setFormSubmitting(form, button, true);
     setFormNote(
-        "Enviando tu mensaje…",
+        window.NVTSI18n?.translate("Sending your message…") || "Sending your message…",
         "sending"
     );
 
@@ -321,19 +323,21 @@ async function sendContactMessage(form, button, originalButtonMarkup, contact) {
         const result = await readJsonResponse(response);
 
         if (!response.ok) {
-            throw new Error(result.message || "No se pudo enviar el mensaje.");
+            throw new Error(result.message || "Your message could not be sent.");
         }
 
         form.reset();
         form.dataset.startedAt = String(Date.now());
         updateConditionalContactFields(form);
+        const successMessage = result.message || "Your message was sent successfully.";
         setFormNote(
-            result.message || "Tu mensaje fue enviado correctamente.",
+            window.NVTSI18n?.translate(successMessage) || successMessage,
             "success"
         );
     } catch (error) {
+        const errorMessage = error.message || "Your message could not be sent. Please try again.";
         setFormNote(
-            error.message || "No se pudo enviar el mensaje. Intentá nuevamente.",
+            window.NVTSI18n?.translate(errorMessage) || errorMessage,
             "error"
         );
     } finally {
@@ -345,11 +349,13 @@ async function readJsonResponse(response) {
     return response.json().catch(() => ({}));
 }
 
-function setFormSubmitting(form, button, isSubmitting, originalButtonMarkup = "Enviar mensaje") {
+function setFormSubmitting(form, button, isSubmitting, originalButtonMarkup = "Send message") {
     form.dataset.submitting = String(isSubmitting);
     button.disabled = isSubmitting;
     button.setAttribute("aria-busy", String(isSubmitting));
-    button.innerHTML = isSubmitting ? "Enviando…" : originalButtonMarkup;
+    button.innerHTML = isSubmitting
+        ? (window.NVTSI18n?.translate("Sending…") || "Sending…")
+        : originalButtonMarkup;
 }
 
 function setFormNote(message, state) {

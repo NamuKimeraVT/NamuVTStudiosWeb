@@ -52,7 +52,7 @@
         const container = document.querySelector(fragment.selector);
 
         if (!container) {
-            reportFragmentError(fragment, "No se encontró el contenedor HTML.");
+            reportFragmentError(fragment, "The HTML container was not found.");
             return createFragmentResult(fragment.file, false);
         }
 
@@ -73,7 +73,7 @@
             const markup = await response.text();
 
             if (!markup.trim()) {
-                throw new Error(`El archivo ${fragment.file} está vacío.`);
+                throw new Error(`The file ${fragment.file} is empty.`);
             }
 
             container.innerHTML = markup;
@@ -86,7 +86,7 @@
 
     function reportFragmentError(fragment, message) {
         console.error(
-            `[NamuVT Studios] No se pudo cargar ${fragment.file}: ${message}`
+            `[NamuVT Studios] Could not load ${fragment.file}: ${message}`
         );
     }
 

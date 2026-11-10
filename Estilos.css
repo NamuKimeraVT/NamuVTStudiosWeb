@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
+/* 01 · Theme tokens and base styles */
+
 :root {
     color-scheme: dark;
     --bg: #0b0d14;
@@ -57,6 +59,8 @@ select,
 textarea {
     font: inherit;
 }
+
+/* 02 · Header and navigation */
 
 .site-header {
     position: sticky;
@@ -148,19 +152,35 @@ textarea {
     padding: 0 28px;
 }
 
+/* 03 · Home page and shared visual components */
+
 .hero-home {
     min-height: 650px;
     display: grid;
-    grid-template-columns: 1.05fr .95fr;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    grid-template-areas: "copy art";
     align-items: center;
     gap: 50px;
     padding: 90px 0 100px;
     position: relative;
 }
 
+.hero-glow {
+    position: absolute;
+    inset: 5% 42% 8% 0;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at 35% 48%, rgba(111, 91, 210, .16), transparent 68%),
+        radial-gradient(ellipse at 72% 55%, rgba(55, 190, 183, .09), transparent 62%);
+    filter: blur(18px);
+}
+
 .hero-copy {
+    grid-area: copy;
     position: relative;
     z-index: 2;
+    min-width: 0;
 }
 
 .eyebrow {
@@ -275,8 +295,11 @@ h3 {
 }
 
 .hero-art {
+    grid-area: art;
     height: 440px;
+    min-width: 0;
     position: relative;
+    z-index: 1;
     display: grid;
     place-items: center;
 }
@@ -587,6 +610,8 @@ h3 {
     object-fit: contain;
 }
 
+/* 04 · Footer and social links */
+
 .site-footer {
     border-top: 1px solid var(--line);
     background: #080a10;
@@ -650,6 +675,8 @@ h3 {
     color: #707b90;
     font-size: 10px;
 }
+
+/* 05 · Inner pages and shared content layouts */
 
 .page-hero {
     padding: 95px 0 55px;
@@ -957,6 +984,8 @@ h3 {
     margin-top: 65px;
 }
 
+/* 06 · FAQ and team layouts */
+
 .faq-content {
     max-width: 900px;
 }
@@ -1135,6 +1164,8 @@ h3 {
     font-size: 13px;
 }
 
+/* 07 · Contact page and form */
+
 .contact-layout {
     padding: 75px 0 100px;
     display: grid;
@@ -1242,8 +1273,10 @@ summary:focus-visible {
     outline-offset: 3px;
 }
 
+/* Official catalog styles for the 25 NVTS applications. */
 
-/* Catálogo oficial de los 25 programas NVTS. */
+/* 08 · NVTS ecosystem catalog */
+
 .ecosystem-catalog {
     border-top: 1px solid var(--line);
 }
@@ -1333,8 +1366,8 @@ summary:focus-visible {
     border-top: 1px solid var(--line);
 }
 
+/* Ecosystem iconography: consistent square application icons. */
 
-/* Iconografía del ecosistema: iconos cuadrados y consistentes. */
 .ecosystem-card {
     min-width: 0;
     min-height: 390px;
@@ -1382,8 +1415,8 @@ summary:focus-visible {
     min-width: 0;
 }
 
+/* Global layout adjustments to prevent overflow on narrow screens. */
 
-/* Ajustes de fluidez global para evitar desbordes en pantallas estrechas. */
 .page-shell {
     width: min(100%, var(--max));
 }
@@ -1404,8 +1437,8 @@ button {
     max-width: 100%;
 }
 
+/* Global motion and micro-interactions. */
 
-/* Movimiento y microinteracciones globales. */
 :root {
     scroll-behavior: smooth;
 }
@@ -1424,8 +1457,7 @@ button {
 .text-link,
 .site-nav a,
 .menu-toggle {
-    transition:
-        transform .22s ease,
+    transition: transform .22s ease,
         color .22s ease,
         background .22s ease,
         border-color .22s ease,
@@ -1469,12 +1501,14 @@ button {
     transform: scale(1.045);
 }
 
-/* Las clases reveal se agregan desde site.js al entrar los elementos en pantalla. */
+/* Reveal classes are added by site.js as elements enter the viewport. */
+
+/* 09 · Interaction and motion states */
+
 .reveal {
     opacity: 0;
     transform: translate3d(0, 22px, 0);
-    transition:
-        opacity .65s ease var(--reveal-delay, 0ms),
+    transition: opacity .65s ease var(--reveal-delay, 0ms),
         transform .65s cubic-bezier(.2, .7, .2, 1) var(--reveal-delay, 0ms);
 }
 
@@ -1483,7 +1517,8 @@ button {
     transform: translate3d(0, 0, 0);
 }
 
-/* Tarjetas del ecosistema: icono, contenido y estado se mantienen ordenados. */
+/* Ecosystem cards keep icons, content, and status aligned. */
+
 .ecosystem-card {
     position: relative;
     overflow: hidden;
@@ -1508,7 +1543,8 @@ button {
     object-position: center;
 }
 
-/* Formulario: feedback visible mientras espera el backend. */
+/* Contact form feedback while waiting for the backend. */
+
 .contact-form button:disabled {
     cursor: wait;
     opacity: .72;
@@ -1536,7 +1572,6 @@ button {
     border: 0 !important;
 }
 
-
 .reveal.is-visible.feature-card:hover,
 .reveal.is-visible.product-card:hover,
 .reveal.is-visible.game-card:hover,
@@ -1545,8 +1580,8 @@ button {
     transform: translate3d(0, -5px, 0);
 }
 
+/* Contextual fields in the contact form. */
 
-/* Campos contextuales del formulario de contacto. */
 .conditional-field {
     display: grid;
     gap: 10px;
@@ -1560,56 +1595,277 @@ button {
     animation: contact-field-enter .24s ease-out both;
 }
 
-@media(max-width:900px) {
+/* Switch to the dropdown menu before navigation links become cramped. */
+
+@keyframes contact-field-enter {
+    from {
+        opacity: 0;
+        transform: translateY(-7px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Decorative animations used across the site. */
+
+/*Animaciones globales del sitio.
+ * Los elementos de contenido se revelan al entrar en pantalla desde site.js.
+ * Este archivo reserva las animaciones decorativas para la identidad visual.*/
+
+@keyframes orbit-drift {
+    from {
+        rotate: -8deg;
+    }
+    to {
+        rotate: 8deg;
+    }
+}
+
+.hero-art .orbit-one {
+    animation: orbit-drift 14s ease-in-out infinite alternate;
+}
+
+.hero-art .orbit-two {
+    animation: orbit-drift 18s ease-in-out infinite alternate-reverse;
+}
+
+/*10 · Versioned documentation hub*/
+
+.docs-content {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.docs-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 900px;
+}
+
+.docs-intro h2 {
+    margin: 0;
+}
+
+.docs-intro p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.docs-index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.docs-index a {
+    padding: 7px 11px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    transition: border-color .2s ease, color .2s ease, background .2s ease;
+}
+
+.docs-index a:hover {
+    border-color: var(--accent);
+    color: var(--text);
+    background: rgba(155, 140, 255, .08);
+}
+
+.docs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    align-items: start;
+}
+
+.docs-card {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .025);
+}
+
+.docs-card-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.docs-card-heading h3 {
+    margin: 5px 0 8px;
+    overflow-wrap: anywhere;
+}
+
+.docs-card-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.docs-card-heading .status-pill {
+    flex: 0 0 auto;
+}
+
+.docs-versions {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+}
+
+.docs-version {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .02);
+}
+
+.docs-version summary {
+    padding: 13px 16px;
+    color: var(--text);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.docs-version-content {
+    padding: 0 16px 16px;
+}
+
+.docs-version-lead,
+.docs-pending,
+.docs-future-note,
+.docs-note {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.docs-topic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.docs-topic {
+    padding: 13px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .02);
+}
+
+.docs-topic h4 {
+    margin: 0 0 6px;
+    font-size: 13px;
+}
+
+.docs-topic p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.docs-note {
+    margin: 14px 0 0;
+    padding-left: 12px;
+    border-left: 2px solid var(--accent-2);
+}
+
+.docs-future-note {
+    margin: 12px 0 0;
+}
+
+.docs-pending {
+    margin: 0;
+}
+
+.faq-license-note {
+    margin-top: 16px;
+    padding-left: 12px;
+    border-left: 2px solid var(--accent-2);
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* 10 · Language selector */
+.language-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    min-height: 36px;
+    padding: 0 11px;
+    border: 1px solid rgba(155, 140, 255, .42);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .035);
+    color: var(--text);
+    font: 700 11px 'Space Grotesk', sans-serif;
+    letter-spacing: .08em;
+    cursor: pointer;
+    transition: border-color .2s, background .2s, transform .2s;
+}
+
+.language-toggle:hover {
+    border-color: var(--accent-2);
+    background: rgba(155, 140, 255, .1);
+    transform: translateY(-1px);
+}
+
+.language-toggle:focus-visible {
+    outline: 2px solid var(--accent-2);
+    outline-offset: 3px;
+}
+
+
+/* 11 · Responsive layouts and accessibility overrides */
+
+@media (max-width:900px) {
     .site-nav {
         gap: 15px;
     }
-
     .site-nav a {
         font-size: 11px;
     }
-
     .hero-home {
         gap: 20px;
         min-height: 590px;
     }
-
     .hero-art {
         transform: scale(.85);
     }
-
     .product-grid,
     .game-grid {
         grid-template-columns: 1fr;
     }
-
     .planned-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
     .footer-main {
         grid-template-columns: 1fr 1fr;
     }
-
     .footer-social {
         grid-column: 1/-1;
     }
-
     .contact-layout {
         gap: 35px;
     }
 }
 
-@media(max-width:680px) {
+@media (max-width:680px) {
     .nav-wrap {
         height: 68px;
         padding: 0 20px;
     }
-
     .menu-toggle {
         display: block;
     }
-
     .site-nav {
         display: none;
         position: absolute;
@@ -1623,233 +1879,193 @@ button {
         align-items: stretch;
         gap: 0;
     }
-
     .site-nav.is-open {
         display: flex;
     }
-
     .site-nav a {
         font-size: 13px;
         padding: 12px 5px;
     }
-
     .site-nav .nav-contact {
         margin-top: 8px;
         text-align: center;
     }
-
     .page-shell {
         padding: 0 20px;
     }
-
     .hero-home {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "copy"
+            "art";
         padding: 75px 0 65px;
         gap: 0;
     }
-
+    .hero-glow {
+        inset: 0 0 42% 0;
+    }
     .hero-home h1 {
         font-size: 49px;
     }
-
     .hero-art {
         height: 290px;
         transform: scale(.75);
         margin-top: -5px;
     }
-
     .section-block,
     .community {
         grid-template-columns: 1fr;
         gap: 20px;
         padding: 65px 0;
     }
-
     .feature-band {
         padding: 65px 20px;
         margin: 0 -20px;
     }
-
     .feature-grid {
         grid-template-columns: 1fr;
     }
-
     .feature-card {
         min-height: 220px;
     }
-
     .ecosystem-callout {
         margin: 60px 0;
         padding: 28px;
         grid-template-columns: 1fr;
     }
-
     .platform-visual {
         height: 220px;
     }
-
     .footer-main {
         padding: 40px 20px 30px;
         grid-template-columns: 1fr 1fr;
         gap: 30px 20px;
     }
-
     .footer-brand {
         grid-column: 1/-1;
     }
-
     .footer-bottom {
         padding: 16px 20px 22px;
         flex-direction: column;
     }
-
     .page-hero {
         padding: 70px 0 40px;
     }
-
     .page-hero h1 {
         font-size: 48px;
     }
-
     .content-section {
         padding: 45px 0;
     }
-
     .section-title-row {
         align-items: start;
         flex-direction: column;
     }
-
     .product-card,
     .game-card {
         grid-template-columns: 105px 1fr;
         padding: 12px;
         gap: 13px;
     }
-
     .product-visual {
         min-height: 145px;
     }
-
     .product-visual img {
         width: 76px;
         height: 76px;
     }
-
     .product-info {
         padding-right: 0;
     }
-
     .product-info h3,
     .game-info h3 {
         font-size: 17px;
     }
-
     .product-info p,
     .game-info p {
         font-size: 10px;
     }
-
     .product-card>.status-pill {
         position: static;
         grid-column: 2;
         justify-self: start;
         margin-top: -6px;
     }
-
     .planned-grid {
         grid-template-columns: 1fr 1fr;
     }
-
     .planned-card {
         padding: 16px;
     }
-
     .launcher-section {
         padding: 25px;
         align-items: flex-start;
         flex-direction: column;
     }
-
     .os-list {
         width: 100%;
     }
-
     .os-list div {
         flex: 1;
     }
-
     .faq-contact {
         align-items: flex-start;
         flex-direction: column;
     }
-
     .person-card {
         grid-template-columns: 75px 1fr;
         padding: 18px;
         gap: 15px;
     }
-
     .person-avatar {
         width: 68px;
         height: 68px;
         border-radius: 15px;
     }
-
     .person-details h2 {
         font-size: 20px;
     }
-
     .role-groups {
         grid-column: 1/-1;
         grid-template-columns: 1fr;
     }
-
     .contact-layout {
         grid-template-columns: 1fr;
         padding: 55px 0 70px;
         gap: 30px;
     }
-
     .contact-form {
         padding: 20px;
     }
-
     .contact-aside h2 {
         font-size: 36px;
     }
 }
 
-@media(max-width:390px) {
+@media (max-width:390px) {
     .hero-home h1 {
         font-size: 42px;
     }
-
     .planned-grid {
         grid-template-columns: 1fr;
     }
-
     .product-card,
     .game-card {
         grid-template-columns: 88px 1fr;
     }
-
     .product-visual {
         min-height: 130px;
     }
-
     .footer-main {
         grid-template-columns: 1fr;
     }
-
     .footer-brand,
     .footer-social {
         grid-column: auto;
     }
 }
 
-@media(prefers-reduced-motion:reduce) {
-
+@media (prefers-reduced-motion:reduce) {
     *,
     *:before,
     *:after {
@@ -1869,24 +2085,20 @@ button {
     .ecosystem-grid {
         grid-template-columns: 1fr;
     }
-
     .ecosystem-card {
         min-height: 0;
     }
 }
 
-/* El menú pasa a formato desplegable antes de que los enlaces se compriman. */
 @media (min-width: 681px) and (max-width: 860px) {
     .nav-wrap {
         position: relative;
         padding: 0 24px;
     }
-
     .menu-toggle {
         display: block;
         cursor: pointer;
     }
-
     .site-nav {
         display: none;
         position: absolute;
@@ -1900,16 +2112,13 @@ button {
         align-items: stretch;
         gap: 0;
     }
-
     .site-nav.is-open {
         display: flex;
     }
-
     .site-nav a {
         padding: 12px 5px;
         font-size: 13px;
     }
-
     .site-nav .nav-contact {
         margin-top: 8px;
         text-align: center;
@@ -1920,12 +2129,10 @@ button {
     .ecosystem-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
     .launcher-feature {
         grid-template-columns: 90px minmax(0, 1fr);
         gap: 18px;
     }
-
     .launcher-feature .os-list {
         grid-column: 2;
     }
@@ -1935,38 +2142,31 @@ button {
     .ecosystem-grid {
         grid-template-columns: 1fr;
     }
-
     .ecosystem-card {
         min-height: 0;
     }
-
     .ecosystem-icon {
         width: 84px;
         height: 84px;
         margin: 14px 0 12px;
         border-radius: 17px;
     }
-
     .launcher-feature {
         grid-template-columns: 76px minmax(0, 1fr);
         gap: 15px;
         padding: 22px;
     }
-
     .launcher-icon {
         width: 76px;
         height: 76px;
         border-radius: 16px;
     }
-
     .launcher-copy h2 {
         font-size: 25px;
     }
-
     .launcher-feature .os-list {
         grid-column: 1 / -1;
     }
-
     .launcher-feature .os-list div {
         min-width: 72px;
     }
@@ -1977,20 +2177,16 @@ button {
         align-items: flex-start;
         flex-wrap: wrap;
     }
-
     .ecosystem-card-top .status-pill {
         max-width: 100%;
         white-space: normal;
     }
-
     .launcher-feature {
         grid-template-columns: 1fr;
     }
-
     .launcher-feature .os-list {
         grid-column: 1;
     }
-
     .launcher-section p {
         overflow-wrap: anywhere;
     }
@@ -2000,21 +2196,17 @@ button {
     .contact-layout {
         grid-template-columns: minmax(0, 1fr);
     }
-
     .person-card {
         grid-template-columns: 92px minmax(0, 1fr);
     }
-
     .person-avatar {
         width: 88px;
         height: 88px;
     }
-
     .role-groups {
         grid-column: 1 / -1;
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
     .contact-form,
     .contact-aside {
         min-width: 0;
@@ -2026,41 +2218,33 @@ button {
         padding-right: 16px;
         padding-left: 16px;
     }
-
     .page-hero h1 {
         font-size: clamp(36px, 10vw, 46px);
         overflow-wrap: anywhere;
     }
-
     .hero-home h1 {
         font-size: clamp(38px, 11vw, 46px);
         overflow-wrap: anywhere;
     }
-
     .person-card {
         grid-template-columns: 68px minmax(0, 1fr);
         gap: 13px;
         padding: 15px;
     }
-
     .person-avatar {
         width: 68px;
         height: 68px;
     }
-
     .person-details h2 {
         overflow-wrap: anywhere;
     }
-
     .role-groups {
         grid-template-columns: minmax(0, 1fr);
     }
-
     .contact-layout {
         padding-right: 0;
         padding-left: 0;
     }
-
     .contact-form {
         padding: 17px;
     }
@@ -2079,11 +2263,9 @@ button {
     .ecosystem-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
     .launcher-feature {
         grid-template-columns: 88px minmax(0, 1fr);
     }
-
     .launcher-feature .os-list {
         grid-column: 1 / -1;
         width: 100%;
@@ -2100,13 +2282,11 @@ button {
         transform: translateY(-8px);
         max-height: 0;
         overflow: hidden;
-        transition:
-            opacity .2s ease,
+        transition: opacity .2s ease,
             transform .2s ease,
             max-height .25s ease,
             visibility .2s ease;
     }
-
     .site-nav.is-open {
         visibility: visible;
         pointer-events: auto;
@@ -2114,39 +2294,32 @@ button {
         transform: translateY(0);
         max-height: 460px;
     }
-
     .ecosystem-grid {
         grid-template-columns: minmax(0, 1fr);
     }
-
     .ecosystem-card {
         min-height: 0;
         padding: 19px;
     }
-
     .ecosystem-icon {
         width: 84px;
         height: 84px;
         margin: 14px 0 12px;
         border-radius: 17px;
     }
-
     .person-card {
         grid-template-columns: 76px minmax(0, 1fr);
         align-items: center;
     }
-
     .person-avatar {
         width: 76px;
         height: 76px;
         border-radius: 16px;
     }
-
     .launcher-feature {
         grid-template-columns: 72px minmax(0, 1fr);
         gap: 16px;
     }
-
     .launcher-icon {
         width: 72px;
         height: 72px;
@@ -2159,28 +2332,22 @@ button {
         padding-right: 16px;
         padding-left: 16px;
     }
-
     .ecosystem-card-top {
         align-items: flex-start;
         flex-wrap: wrap;
     }
-
     .ecosystem-card h3 {
         font-size: 18px;
     }
-
     .launcher-feature {
         grid-template-columns: minmax(0, 1fr);
     }
-
     .launcher-feature .os-list {
         flex-wrap: wrap;
     }
-
     .contact-form {
         padding: 18px;
     }
-
     .contact-form button {
         width: 100%;
         justify-self: stretch;
@@ -2191,7 +2358,6 @@ button {
     :root {
         scroll-behavior: auto;
     }
-
     *,
     *::before,
     *::after {
@@ -2200,22 +2366,9 @@ button {
         transition-duration: .01ms !important;
         scroll-behavior: auto !important;
     }
-
     .reveal {
         opacity: 1;
         transform: none;
-    }
-}
-
-@keyframes contact-field-enter {
-    from {
-        opacity: 0;
-        transform: translateY(-7px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -2225,34 +2378,208 @@ button {
     }
 }
 
-/* Animaciones decorativas globales del sitio. */
-/* Animaciones globales del sitio.
- * Los elementos de contenido se revelan al entrar en pantalla desde site.js.
- * Este archivo reserva las animaciones decorativas para la identidad visual.
- */
-
-@keyframes orbit-drift {
-    from {
-        rotate: -8deg;
-    }
-
-    to {
-        rotate: 8deg;
-    }
-}
-
-.hero-art .orbit-one {
-    animation: orbit-drift 14s ease-in-out infinite alternate;
-}
-
-.hero-art .orbit-two {
-    animation: orbit-drift 18s ease-in-out infinite alternate-reverse;
-}
-
 @media (prefers-reduced-motion: reduce) {
-
     .hero-art .orbit-one,
     .hero-art .orbit-two {
         animation: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .docs-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 680px) {
+    .docs-card {
+        padding: 18px;
+    }
+    .docs-card-heading {
+        flex-direction: column;
+    }
+    .docs-topic-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* 12 · Responsive language selector */
+@media (max-width: 900px) {
+    .language-toggle {
+        min-height: 34px;
+    }
+}
+
+@media (max-width: 680px) {
+    .site-nav .language-toggle {
+        align-self: flex-start;
+        margin: 12px 5px 0;
+    }
+}
+
+@media (min-width: 681px) and (max-width: 860px) {
+    .site-nav .language-toggle {
+        align-self: flex-start;
+        margin: 12px 5px 0;
+    }
+}
+
+/* 10 · Expanded NVTS application catalog layout */
+
+.programs-page .page-shell {
+    width: min(100%, 1480px);
+    max-width: 1480px;
+    padding-right: 36px;
+    padding-left: 36px;
+}
+
+.programs-page .ecosystem-grid {
+    gap: 18px;
+}
+
+.programs-page .ecosystem-card {
+    min-height: 430px;
+    padding: 24px;
+}
+
+.programs-page .ecosystem-card-top {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.programs-page .ecosystem-card .status-pill {
+    padding: 7px 10px;
+    font-size: 9px;
+    letter-spacing: .06em;
+    line-height: 1.4;
+}
+
+.programs-page .ecosystem-category {
+    margin-top: 19px;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.programs-page .ecosystem-card h3 {
+    margin: 12px 0;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.programs-page .ecosystem-card p {
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+@media (max-width: 1200px) {
+    .programs-page .page-shell {
+        padding-right: 28px;
+        padding-left: 28px;
+    }
+
+    .programs-page .ecosystem-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .programs-page .ecosystem-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .programs-page .ecosystem-card {
+        min-height: 390px;
+    }
+}
+
+@media (max-width: 680px) {
+    .programs-page .page-shell {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .programs-page .ecosystem-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .programs-page .ecosystem-card {
+        min-height: 0;
+        padding: 22px;
+    }
+
+    .programs-page .ecosystem-card p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 420px) {
+    .programs-page .page-shell {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .programs-page .ecosystem-card {
+        padding: 19px;
+    }
+}
+
+/* 13 · Desktop navigation alignment and compact spacing */
+@media (min-width: 861px) {
+    .nav-wrap {
+        gap: 14px;
+    }
+
+    .brand {
+        flex-shrink: 0;
+    }
+
+    .site-nav {
+        flex-wrap: nowrap;
+        flex-shrink: 0;
+        gap: 12px;
+        white-space: nowrap;
+    }
+
+    .site-nav a {
+        font-size: 12px;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 861px) and (max-width: 1100px) {
+    .nav-wrap {
+        gap: 8px;
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .brand {
+        gap: 7px;
+        font-size: 13px;
+    }
+
+    .brand img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .site-nav {
+        gap: 7px;
+    }
+
+    .site-nav a {
+        font-size: 10px;
+    }
+
+    .site-nav .nav-contact {
+        padding: 8px 10px;
+    }
+
+    .site-nav .language-toggle {
+        min-width: 34px;
+        padding-right: 8px;
+        padding-left: 8px;
     }
 }
